@@ -1,0 +1,14 @@
+%YAML 1.2
+---
+app_name: 聖遺物自動化ツール
+export_btn: 聖遺物リストのエクスポート
+arrange_btn: 聖遺物の整理
+export_win_title: 聖遺物のエクスポート
+scan_setting: スキャン設定
+star_level: 星レベル
+five_star: 五つ星
+four_star: 四つ星
+level_range: レベル範囲
+start_scan: スキャンの開始
+scan_progress: "スキャン中、進行状況: {:d}%"
+finish_scan: スキャンが完了しました。再度スキャンを開始するにはクリックしてください。

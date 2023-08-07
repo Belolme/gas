@@ -1,0 +1,169 @@
+statements:
+- max_level: 4
+  min_level: 0
+  type: ArtifactLevelStatement
+- opt: 1
+  type: OptStatement
+- lock: false
+  type: ArtifactLockStatement
+  unlock: true
+- opt: 1
+  type: OptStatement
+- attr_items:
+  - id: hp
+    max: 4780
+    min: 645
+    type: AttributeItem
+  - id: hprate
+    max: 0.466
+    min: 0.063
+    type: AttributeItem
+  - id: atk
+    max: 311
+    min: 42
+    type: AttributeItem
+  - id: atkrate
+    max: 0.466
+    min: 0.063
+    type: AttributeItem
+  - id: defrate
+    max: 0.583
+    min: 0.079
+    type: AttributeItem
+  type: MainAttributeStatement
+- opt: 1
+  type: OptStatement
+- attr_items:
+  - id: cr
+    max: 0.234
+    min: 0.022
+    type: AttributeItem
+  - id: cd
+    max: 0.468
+    min: 0.044
+    type: AttributeItem
+  type: SubAttributeStatement
+- opt: 2
+  type: OptStatement
+- max_level: 4
+  min_level: 0
+  type: ArtifactLevelStatement
+- opt: 1
+  type: OptStatement
+- lock: false
+  type: ArtifactLockStatement
+  unlock: true
+- opt: 1
+  type: OptStatement
+- attr_items:
+  - id: cr
+    max: 0.311
+    min: 0.042
+    type: AttributeItem
+  type: MainAttributeStatement
+- opt: 1
+  type: OptStatement
+- attr_items:
+  - id: cd
+    max: 0.468
+    min: 0.044
+    type: AttributeItem
+  type: SubAttributeStatement
+- opt: 2
+  type: OptStatement
+- lock: false
+  type: ArtifactLockStatement
+  unlock: true
+- opt: 1
+  type: OptStatement
+- max_level: 4
+  min_level: 0
+  type: ArtifactLevelStatement
+- opt: 1
+  type: OptStatement
+- attr_items:
+  - id: cd
+    max: 0.622
+    min: 0.084
+    type: AttributeItem
+  type: MainAttributeStatement
+- opt: 1
+  type: OptStatement
+- attr_items:
+  - id: cr
+    max: 0.234
+    min: 0.022
+    type: AttributeItem
+  type: SubAttributeStatement
+- opt: 2
+  type: OptStatement
+- lock: false
+  type: ArtifactLockStatement
+  unlock: true
+- opt: 1
+  type: OptStatement
+- max_level: 4
+  min_level: 0
+  type: ArtifactLevelStatement
+- opt: 1
+  type: OptStatement
+- attr_items:
+  - id: er
+    max: 0.518
+    min: 0.07
+    type: AttributeItem
+  - id: em
+    max: 187
+    min: 25
+    type: AttributeItem
+  - id: healing
+    max: 0.359
+    min: 0.048
+    type: AttributeItem
+  - id: phydmg
+    max: 0.583
+    min: 0.079
+    type: AttributeItem
+  - id: admg
+    max: 0.466
+    min: 0.063
+    type: AttributeItem
+  - id: gdmg
+    max: 0.466
+    min: 0.063
+    type: AttributeItem
+  - id: edmg
+    max: 0.466
+    min: 0.063
+    type: AttributeItem
+  - id: ddmg
+    max: 0.466
+    min: 0.063
+    type: AttributeItem
+  - id: hdmg
+    max: 0.466
+    min: 0.063
+    type: AttributeItem
+  - id: pdmg
+    max: 0.466
+    min: 0.063
+    type: AttributeItem
+  - id: crdmg
+    max: 0.466
+    min: 0.063
+    type: AttributeItem
+  type: MainAttributeStatement
+- opt: 1
+  type: OptStatement
+- attr_items:
+  - id: cr
+    max: 0.234
+    min: 0.022
+    type: AttributeItem
+  - id: cd
+    max: 0.468
+    min: 0.044
+    type: AttributeItem
+  type: SubAttributeStatement
+- opt: 0
+  type: OptStatement

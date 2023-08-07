@@ -1,0 +1,21 @@
+%YAML 1.2
+---
+hp: lifeStatic
+hprate: lifePercentage
+atk: attackStatic
+atkrate: attackPercentage
+def: defendStatic
+defrate: defendPercentage
+cr: critical
+cd: criticalDamage
+er: recharge
+em: elementalMastery
+healing: cureEffect
+phydmg: physicalBonus
+admg: windBonus
+gdmg: rockBonus
+edmg: thunderBonus
+ddmg: dendroBonus
+hdmg: waterBonus
+pdmg: fireBonus
+crdmg: iceBonus

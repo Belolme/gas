@@ -1,0 +1,14 @@
+%YAML 1.2
+---
+app_name: Artifact Automation Tool
+export_btn: Export Artifact List
+arrange_btn: Arrange Artifacts
+export_win_title: Export Artifacts
+scan_setting: Scan Settings
+star_level: Star Level
+five_star: Five Stars
+four_star: Four Stars
+level_range: Level Range
+start_scan: Start Scanning
+scan_progress: "Scanning, progress: {:d}%"
+finish_scan: Scanning complete, click to start scanning again

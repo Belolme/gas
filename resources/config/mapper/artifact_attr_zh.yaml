@@ -1,0 +1,21 @@
+%YAML 1.2
+---
+hp: 生命值
+hprate: 生命百分比
+atk: 攻击力
+atkrate: 攻击百分比
+def: 防御力
+defrate: 防御力百分比
+cr: 暴击率
+cd: 暴击伤害
+er: 元素充能
+em: 元素精通
+healing: 治疗
+phydmg: 物理伤害
+admg: 风元素伤害
+gdmg: 岩元素伤害
+edmg: 雷元素伤害
+ddmg: 草元素伤害
+hdmg: 水元素伤害
+pdmg: 火元素伤害
+crdmg: 冰元素伤害

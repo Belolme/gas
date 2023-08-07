@@ -1,0 +1,21 @@
+%YAML 1.2
+---
+hp: flatHP
+hprate: percentHP
+atk: flatATK
+atkrate: percentATK
+def: flatDEF
+defrate: percentDEF
+cr: critRate
+cd: critDamage
+er: energyRecharge
+em: elementalMastery
+healing: healing
+phydmg: physicalDamage
+admg: anemoDamage
+gdmg: geoDamage
+edmg: electroDamage
+ddmg: dendroDamage
+hdmg: hydroDamage
+pdmg: pyroDamage
+crdmg: cryoDamage
