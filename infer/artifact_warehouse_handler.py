@@ -1,3 +1,4 @@
+import ctypes
 import os
 import re
 import time
@@ -346,6 +347,16 @@ class ArtifactWarehouseHandler(object):
             callback(code=ArtifactWarehouseHandler.CB_ERR_PARAM_INVALID)
             return
 
+        token = ctypes.windll.shell32.IsUserAnAdmin()
+        if token != 0:
+            is_admin = True
+        else:
+            is_admin = False
+
+        if not is_admin:
+            callback(code=ArtifactWarehouseHandler.CB_ERR_SWITCH_FAILED)
+            return
+
         hwnd = wm.switch_to_genshin()
         if hwnd == 0:
             callback(code=ArtifactWarehouseHandler.CB_ERR_SWITCH_FAILED)
@@ -397,6 +408,7 @@ class ArtifactWarehouseHandler(object):
         mouse_x = 0
         mouse_y = 0
 
+        scroll_to_top = False
         scroll_to_end = False
         scroll_distances_of_list = 0
         scroll_card_num = 0
@@ -411,6 +423,8 @@ class ArtifactWarehouseHandler(object):
         ]
 
         while True:
+            # print("awh.scan_artifact action: ", action)
+
             if action == action_begin:
                 posx = self._info_bounds[0, 0] + winx
                 posy = self._info_bounds[0, 1] + winy
@@ -515,6 +529,7 @@ class ArtifactWarehouseHandler(object):
                             before_img,
                             cv2.TM_CCOEFF_NORMED,
                         )[0, 0]
+                        # print("awh.scanartifact scroll confidence if img same: ", confidence)
                         if confidence > 0.95:
                             scroll_is_end = True
                             break
@@ -564,14 +579,21 @@ class ArtifactWarehouseHandler(object):
                 if mouse_moved:
                     action = action_end_by_user
                 elif scroll_is_end:
-                    scroll_card_num = 1
-                    scroll_to_end = True
-                    action = action_scroll_cards
+                    if scroll_card_num > 0:
+                        scroll_to_top = True
+                        action = action_end_by_ending
+                    else:
+                        scroll_card_num = 1
+                        scroll_to_end = True
+                        action = action_scroll_cards
                 else:
                     action = action_check_page_skippable
             elif action == action_scroll_next_page:
-                scroll_card_num = -self._list_row
-                action = action_scroll_cards
+                if scroll_to_top or scroll_to_end:
+                    action = action_end_by_ending
+                else:
+                    scroll_card_num = -self._list_row
+                    action = action_scroll_cards
 
             elif action == action_itr_start:
                 itr_rowi = 0
@@ -719,8 +741,9 @@ class ArtifactWarehouseHandler(object):
             txt = info_list[i]
             if not name:
                 name = self._find_in_map(txt, self._map_name_zh)
+                # ignore info below name
                 if name:
-                    continue
+                    break
 
             sub_attr = self._find_in_map(txt, self._map_attr_zh)
             if sub_attr:
