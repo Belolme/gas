@@ -71,19 +71,19 @@ class ScreenshootHandler(object):
         self.hwnd = hwnd
         self.scale = get_scaling()
 
-        self.window_dc = win32gui.GetWindowDC(self.hwnd)
+        self.window_dc = win32gui.GetDC(self.hwnd)
         self.dc = win32ui.CreateDCFromHandle(self.window_dc)
         self.compatible_dc = self.dc.CreateCompatibleDC()
 
-        self.title_bar_height = int(
-            round(win32api.GetSystemMetrics(win32con.SM_CYCAPTION) * self.scale, 0)
-        )
-        self.framex = int(
-            round(win32api.GetSystemMetrics(win32con.SM_CXEDGE) * self.scale, 0)
-        )
-        self.framey = int(
-            round(win32api.GetSystemMetrics(win32con.SM_CYEDGE) * self.scale, 0)
-        )
+        # self.title_bar_height = int(
+        #     round(win32api.GetSystemMetrics(win32con.SM_CYCAPTION) * self.scale, 0)
+        # )
+        # self.framex = int(
+        #     round(win32api.GetSystemMetrics(win32con.SM_CXEDGE) * self.scale, 0)
+        # )
+        # self.framey = int(
+        #     round(win32api.GetSystemMetrics(win32con.SM_CYEDGE) * self.scale, 0)
+        # )
 
         _, _, width, height = win32gui.GetClientRect(self.hwnd)
         self.width = int(round(width * self.scale, 0))
@@ -102,7 +102,7 @@ class ScreenshootHandler(object):
             (0, 0),
             (width, height),
             self.dc,
-            (self.framex, self.title_bar_height + self.framey),
+            (0, 0),
             win32con.SRCCOPY,
         )
 
